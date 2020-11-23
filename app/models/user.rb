@@ -1,4 +1,4 @@
 class User < ApplicationRecord
   has_many   :orders
-  belongs_to :cart
+  has_one :cart
 end
