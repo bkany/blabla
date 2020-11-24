@@ -48,4 +48,11 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.0]
   #   # model already existed. Please edit below which fields you would like to remove in this migration.
   #   raise ActiveRecord::IrreversibleMigration
   # end
+  
+  def self.down
+  	remove_column(:users, :reset_password_token)
+  	remove_column(:users, :reset_password_sent_at)
+  	remove_index(:users, :email)
+  	remove_index(:users, :reset_password_token)
+  end
 end
