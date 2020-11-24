@@ -37,5 +37,10 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'faker'
+<<<<<<< HEAD
 gem 'dotenv-rails'
 gem 'cloudinary'
+=======
+
+gem 'mini_racer'
+>>>>>>> fd68206db47a8b3cd3488b9acefecd839038ff0b

@@ -35,5 +35,9 @@
 yarn-debug.log*
 .yarn-integrity
 
+<<<<<<< HEAD
 # Ignore env file
 .env*
+=======
+.idea
+>>>>>>> fd68206db47a8b3cd3488b9acefecd839038ff0b
