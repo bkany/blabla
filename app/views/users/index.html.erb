@@ -1,0 +1,29 @@
+
+    <div class="w-75 mx-auto">
+        <div class="d-flex align-items-center">
+            <div class="mx-auto">
+
+            <div class="overflow-hidden" style="height: 30vh; width: 30vh; border-radius: 50%;">
+                <img class="h-100 w-100" style="background-image: url('<%=@user.avatar%>'); background-size: cover; background-position: center center;" alt="" srcset="">
+            </div>
+            <div class="h2 mx-auto position-relative">
+               <div class="align-items-center d-flex w-100">
+                <div class="w-100 d-flex justify-content-center">
+                        <%=@user.first_name%> <%=@user.last_name%>
+                    </div>
+                    <% if @user.is_admin == true %>
+                        <div class="h6 d-inline btn-outline-warning p-1 rounded">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    <% end %>
+               </div>
+            </div>
+            <div class="w-100 d-flex justify-content-center mt-3 align-items-center">
+                
+                <%= link_to(raw('<div class="btn btn-primary">Mon panier <i class="fas fa-shopping-cart"></i></div>'), cart_path(current_user)) %>
+            </div>
+            <div class="w-100 d-flex justify-content-center mt-3">
+                <%= link_to(raw('<div class="btn btn-warning"> Editer mon profil <i class="fas fa-pen"></i></div>'), cart_path(current_user)) %>
+            </div>
+        </div>
+    </div>

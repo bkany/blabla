@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items do 
   	resources :cart_items, only: [:create, :update, :destroy]
   end
+  resources :users
 
   
 end
