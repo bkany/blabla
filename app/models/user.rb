@@ -12,4 +12,10 @@ class User < ApplicationRecord
   #validates :first_name, presence: true
   #validates :last_name, presence: true
 
+  has_many   :orders
+  has_one    :cart
+
+  #validates :first_name, :last_name, presence: true
+  #validates :first_name, :last_name, length: { in: 2..36 }
+
 end
