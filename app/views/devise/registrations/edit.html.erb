@@ -31,7 +31,7 @@
           required: true,
           input_html: { autocomplete: "Mot de passe actuel" } %>
           <% if @user.avatar.attached? %>
-          <%= link_to "Supprimer ma photo de profil", user_remove_path(@user),
+          <%#= link_to "Supprimer ma photo de profil", user_remove_path(@user),
           method: :delete,
           data: { confirm: t('.confirm', default: 'Êtes-vous certain ?') },
           class: 'delete' %>
