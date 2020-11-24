@@ -39,3 +39,5 @@ gem 'font-awesome-sass'
 gem 'faker'
 
 gem 'mini_racer'
+gem 'stripe'
+gem 'dotenv'

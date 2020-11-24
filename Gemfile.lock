@@ -84,6 +84,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.6)
     erubi (1.10.0)
     execjs (2.7.0)
     faker (2.14.0)
@@ -100,7 +101,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
-    libv8 (8.4.255.0-x86_64-linux)
+    libv8 (8.4.255.0)
     listen (3.3.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -209,6 +210,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (5.28.0)
     thor (1.0.1)
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
@@ -254,6 +256,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  dotenv
   faker
   font-awesome-sass
   jbuilder (~> 2.7)
@@ -267,6 +270,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
