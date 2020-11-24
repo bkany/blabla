@@ -1,12 +1,20 @@
-<div class="container">
-    <div class="jumbotron">
-      <h1 class="display-3">KITTENSHOP</h1>
-      <p class="lead">Vous aimez les chats ? Vous aimez les photos ? Alors vous aimerez nos photos de chats !</p>
-      <hr class="my-4">
-      <p>Blabla</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </p>
+<div class="container position-relative">
+    <div class="position-absolute w-100 h-100 overflow-hidden" style="transition-duration : 0.5s" id="container">
+      <%@items.map do |item|%>
+        <div class="w-100 h-100 d-block d-flex align-items-center justify-content-center">
+          <div class="w-100 h-100" style="background-image:url('<%= item.image_url %>'); background-size : cover; background-position: center center;">
+          </div>
+        </div>
+      <%end%>
+    </div>
+    <div class="jumbotron ">
+        <h1 class="display-3">KITTENSHOP</h1>
+        <p class="lead">Vous aimez les chats ? Vous aimez les photos ? Alors vous aimerez nos photos de chats !</p>
+        <hr class="my-4">
+        <p>Blabla</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
     </div>
 </div>
 
@@ -22,4 +30,8 @@
       </div>
     </div>
     <% end %>
+
 </div>
+
+
+    <%=javascript_include_tag "carousel"%>
