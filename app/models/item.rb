@@ -5,11 +5,6 @@ class Item < ApplicationRecord
   has_many   :cart_items
   has_many   :carts, through: :cart_items
 
-  # t.string "title"
-  # t.text "description"
-  # t.decimal "price"
-  # t.string "image_url"
-
   validates :title, :description, :price, :image_url, presence: true
   validates :title, length: { in: 3..30 }
   validates :description, length: { in: 4..10000 }
