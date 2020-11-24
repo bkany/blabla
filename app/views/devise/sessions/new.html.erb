@@ -14,11 +14,15 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
       <div class="login-button-form">
-        <%= f.button :submit, "Se connecter", class:"btn-orange" %>
+        <%= f.button :submit, "Se connecter", class:"btn-primary" %>
       </div>
       <% end %>
       <div class="or">ou connectez-vous via</div>
       <div class="flex-c-m social-connector">
+        <% unless current_user %>
+        <% else %>
+        <%= link_to “Logout”, destroy_user_session_path, method: :delete %>
+        <% end %>
         <a href="#" class="login-social-item bg1">
           <i class="fab fa-facebook-f"></i>
         </a>
