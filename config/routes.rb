@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :carts
-  resources :items
+  resources :carts, only: [:show]
+  resources :items do 
+  	resources :cart_items, only: [:create, :update, :destroy]
+  end
+
   
 end
