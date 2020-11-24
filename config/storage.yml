@@ -32,3 +32,7 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+# ActiveStorage Cloudinary
+cloudinary:
+  service: Cloudinary

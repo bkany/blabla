@@ -24,14 +24,14 @@ p "-----------------------"
 
 
 puts 'test category'
-Category.new(name: "classic").save              
-Category.new(name: "funny").save                
-Category.new(name: "kitty").save                
-Category.new(name: "black_cat").save            
-Category.new(name: "white_cat").save            
-Category.new(name: "ginger_cat").save           
+Category.new(name: "classic").save
+Category.new(name: "funny").save
+Category.new(name: "kitty").save
+Category.new(name: "black_cat").save
+Category.new(name: "white_cat").save
+Category.new(name: "ginger_cat").save
 Category.new(name: "black_and_white_cat").save
-Category.new(name: "main_coon").save        
+Category.new(name: "main_coon").save
 Category.new(name: "neva").save
 Category.new(name: "paws").save
 Category.new(name: "cat_head").save
@@ -70,7 +70,6 @@ puts 'test User'
     u.email = "#{u.first_name}.#{u.last_name}@gmail.com"
     u.password = "123456"
     u.is_admin = false
-    u.avatar = ""
     u.save
     c = Cart.new
     c.user_id = u.id
