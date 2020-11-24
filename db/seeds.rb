@@ -57,7 +57,6 @@ Item.create(title: "portrait mignon", description:"ce chat prend la pause rien q
 Item.create(title: "sous les orchidees", description:"quelle belle compagnie qu sont les fleurs", price: 14.00, image_url: "/pictures/kitty13.jpeg", category_id: Category.all.sample.id)
 Item.create(title: "spleen", description:"si l'on pouvait comprendre ses miaulement, Arthur Rimbaud serait un petit joueur", price: 14.00, image_url: "/pictures/kitty14.jpeg", category_id: Category.all.sample.id)
 Item.create(title: "Il vous surveille", description:"Mr Berthier, c'est vous?", price: 14.00, image_url: "/pictures/kitty15.jpeg", category_id: Category.all.sample.id)
-
 p "Creation Item... #{Item.count}"
 puts "DONE"
 p "-----------------------"
