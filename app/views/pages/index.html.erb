@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="jumbotron ">
+        <h1 class="display-3">KITTENSHOP</h1>
+        <p class="lead">Vous aimez les chats ? Vous aimez les photos ? Alors vous aimerez nos photos de chats !</p>
+        <hr class="my-4">
+        <p>Blabla</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+    </div>
+</div>
+
+
+<div class="container d-flex flex-wrap">
+    <% Item.all.each do |item| %>
+    <div class="card border-dark mb-3 mx-auto col-md-4" style="max-width: 20rem;">
+      <div class="card-header"><%= item.title %></div>
+      <div class="card-body position-relative">
+        <img src="<%= item.image_url %>" alt="cat picture" style="max-width:100%; max-height: 20vh;" class="mx-auto">
+        <p class="card-text"><%= item.description%></p>
+        <div class="w-100 d-flex justify-content-center">
+           <button type="button" class="btn btn-primary btn-sm botto my-auto"><%= link_to "Voir le produit", item_path(item[:id]), class: "dropdown-item" %></button>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+</div>
+
+
+    <%#=javascript_include_tag "carousel"%>
