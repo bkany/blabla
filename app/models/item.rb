@@ -10,5 +10,6 @@ class Item < ApplicationRecord
   validates :description, length: { in: 4..10000 }
   validates :price, numericality: true
   validates :image_url, uniqueness: true
-
 end
+
+

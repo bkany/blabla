@@ -28,7 +28,11 @@
                       </div>
                 </div>
                 <div class="w-25 d-flex justify-content-center align-content-center">
-                    <%= link_to "Ajouter", item_cart_items_path(@item), method: :post, class:"btn btn-success d-flex align-items-center" %>
+                    <% if already_in_cart? %>
+                    <%= button_to "Retirer", item_cart_item_path(@item), method: :delete, class:"btn btn-outline-danger" %>
+                    <% else %>
+                    <%= button_to "Ajouter", item_cart_items_path(@item), method: :post, class:"btn btn-success d-flex align-items-center" %>
+                    <% end %>
                 </div>
             </div>
         </div>

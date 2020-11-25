@@ -2,6 +2,7 @@
 <div class="jumbotron">
 	<h1 class="display-3 ml-3">Votre panier</h1>
 	<p class="lead"> Voici les produits de votre panier, vous pouvez le valider ou en ajouter d'autres.</p>
+	<p> Total de votre panier : <%= @total %> €</p> 
 	<hr class="my-4">
 	<p class="lead">
 		<a class="btn btn-success btn-lg" href="#" role="button">Valider mon panier</a>
@@ -29,7 +30,7 @@
 	<% @cart_items.each do |cart_item| %>
 	<div class="row border-bottom">
 		<div class="col border-bottom border-left d-flex align-items-center justify-content-center">
-			<%= link_to "Retirer", item_cart_item_path(cart_item.id), method: :delete, class:"btn btn-outline-danger" %>
+			<%= button_to "Retirer", item_cart_item_path(cart_item.id), method: :delete, class:"btn btn-outline-danger" %>
 		</div>
 		<div class="col border-bottom d-flex align-items-center justify-content-center">
 			<img src="<%= cart_item.image_url %>" class="mw-100">
