@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* heroku app : https://kittenshop-develop-mjqwijdxang.herokuapp.com/
