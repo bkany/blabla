@@ -20,7 +20,7 @@ class CartsController < ApplicationController
 	def user_cart?
 		@user = User.find(params[:id])
 		@cart = @user.cart
-		if @cart == current_user.cart
+		if current_user && @cart == current_user.cart
 			return true
 		else 
 			return false
