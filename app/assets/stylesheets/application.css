@@ -13,8 +13,9 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap
+ *= require pages/index
+ *= require components/avatar
  *= require_tree .
  *= require_self
  */
-@import "pages/index";
-@import "components/index";
+
