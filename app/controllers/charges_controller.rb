@@ -1,8 +1,27 @@
 class ChargesController < ApplicationController
-	Rails.configuration.stripe = {
-		:publishable_key => ENV['PUBLISHABLE_KEY'],
-		:secret_key      => ENV['SECRET_KEY']
-	}
 
-	Stripe.api_key = Rails.configuration.stripe[:secret_key]
+	def new
+	end
+
+	def create
+		# Amount in cents
+		@amount = 500
+
+		customer = Stripe::Customer.create({
+		  email: params[:stripeEmail],
+		  source: params[:stripeToken],
+		})
+
+		charge = Stripe::Charge.create({
+		  customer: customer.id,
+		  amount: @amount,
+		  description: "Payment of #{user.first_name} #{user.last_name}",
+		  currency: 'eur',
+		})
+
+	rescue Stripe::CardError => e
+		flash[:error] = e.message
+		redirect_to new_charge_path
+	end
+
 end
