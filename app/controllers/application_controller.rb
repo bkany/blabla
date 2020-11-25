@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation)}
     devise_parameter_sanitizer.permit(:account_update) {|u| u.permit(:first_name, :last_name, :email, :avatar, :password, :password_confirmation, :current_password)}
   end
+
   def remove
     @user = User.find(params[:user_id])
     @avatar = @user.avatar
