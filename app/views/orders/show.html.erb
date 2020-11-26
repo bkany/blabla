@@ -6,6 +6,9 @@
     <hr class="my-4">
     <p class="lead">
       <%= link_to 'Retourner au dashboard', orders_path, class:"btn btn-success btn-lg" %>
+      <% if current_user.is_admin %>
+        <%= link_to 'Retourner au General', dashboards_path, class:"btn btn-success btn-lg" %>
+      <% end %>
     </p>
   </div>
 </div>
