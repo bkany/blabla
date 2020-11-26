@@ -41,3 +41,6 @@ gem 'dotenv-rails'
 gem 'cloudinary'
 gem 'letter_opener', :group => :development
 gem 'table_print'
+
+#REMOVE THIS GEM IF I DID'NT
+gem 'mini_racer'

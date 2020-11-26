@@ -6,5 +6,11 @@ class UserMailer < ApplicationMailer
     @url = "kittenshop.herokuapp.com/login"
     mail(to: @user.email, subject: "Bienvenue chez KittenShop !")
   end
+  def confirmation_order_user_email(order)
+    @user = order.user
+    @order = order
+    @url = "kittenshop.herokuapp.com/login"
+    mail(to: @user.email, subject: "Confirmation de commande")
+  end
 
 end
