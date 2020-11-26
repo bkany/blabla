@@ -10,7 +10,10 @@ class OrdersController < ApplicationController
       if @order.save
         @cart_items = @cart.cart_items
         @cart_items.each do |item|
-          @order_item = OrderItem.create(order_id: @order.id, item_id: item.item_id)
+          @order_item = OrderItem.create(order_id: @order.id, item_id: item.item_id, quantity: 1)
+          @order_item.save
+          puts '###########################BEFORE####################################'
+          puts @order_item.errors.messages
           item.destroy
         end
         flash.notice = "Votre commande a bien ete effectuer"
