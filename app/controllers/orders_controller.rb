@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :require_order, only: :show
-
+  
   def index
     @orders = current_user.orders
   end
@@ -54,7 +54,7 @@ class OrdersController < ApplicationController
 
     @order = Order.find(params[:id])
 
-    if current_user == @order.user
+    if current_user == @order.user || current_user.is_admin
       return true
     else
       return false
