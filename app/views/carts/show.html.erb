@@ -1,13 +1,33 @@
 <div class="container">
-<div class="jumbotron">
-	<h1 class="display-3 ml-3">Votre panier</h1>
-	<p class="lead"> Voici les produits de votre panier, vous pouvez le valider ou en ajouter d'autres.</p>
-	<p> Total de votre panier : <%= @cart.total %> €</p>
-	<hr class="my-4">
-	<p class="lead">
-    <%= button_to 'Valider mon panier', orders_path, method: :post, class:"btn btn-success btn-lg" %>
-	</p>
-</div>
+	<div class="jumbotron">
+		<h1 class="display-3 ml-3">Votre panier</h1>
+		<p class="lead"> Voici les produits de votre panier, vous pouvez le valider ou en ajouter d'autres.</p>
+		<p> Total de votre panier : <%= @cart.total %> €</p>
+		<hr class="my-4">
+		<p class="lead">
+
+			<%= form_tag charges_path do %>
+			<article>
+				<% if flash[:error].present? %>
+				<div id="error_explanation">
+					<p><%= flash[:error] %></p>
+				</div>
+				<% end %>
+				<label class="amount">
+					<span>Amount: <%= @cart.total %> € </span>
+				</label>
+			</article>
+
+			<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+			data-description="Payment"
+			data-amount="<%= @cart.total_stripe  %>"
+			data-currency="eur"
+			data-locale="auto"> </script>
+			<% end %>
+
+		</p>
+	</div>
 </div>
 <div class="container m-5 mx-auto">
 	<div class="row">

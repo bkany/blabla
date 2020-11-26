@@ -12,4 +12,14 @@ class Cart < ApplicationRecord
     return total
   end
 
+  def total_stripe
+    cart_items = self.cart_items
+    total = 0
+    cart_items.each do |t|
+      total += t.item.price
+    end
+    total = total *100
+    return total
+  end
+
 end

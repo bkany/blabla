@@ -41,3 +41,4 @@ gem 'dotenv-rails'
 gem 'cloudinary'
 gem 'letter_opener', :group => :development
 gem 'table_print'
+gem 'stripe'
