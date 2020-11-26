@@ -10,6 +10,18 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @total = current_user.cart.total_stripe.to_i
+    customer = Stripe::Customer.create({
+      email: params[:stripeEmail],
+      source: params[:stripeToken],
+    })
+    charge = Stripe::Charge.create({
+      customer: customer.id,
+      amount: @total,
+      description: "Payment of #{current_user.first_name} #{current_user.last_name}",
+      currency: 'eur',
+    })
+    
     @cart = current_user.cart
     if !@cart.items.first
       flash.alert = "Votre panier est vide"
@@ -24,14 +36,20 @@ class OrdersController < ApplicationController
           item.destroy
         end
         flash.notice = "Votre commande a bien été effectuée"
-        redirect_to root_path
+        redirect_to orders_path
       else
         flash.alert = "Une erreur est survenue #{@order.errors.messages}"
         redirect_to cart_path(id: current_user.id)
       end
     end
-  end
 
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    puts e.message
+    redirect_to root_path
+
+  end
   def user_order?
 
     @order = Order.find(params[:id])

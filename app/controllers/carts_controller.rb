@@ -6,7 +6,7 @@ class CartsController < ApplicationController
 		@cart = @user.cart
 		@cart_items = @cart.items
 	end
-
+	
 	def user_cart?
 		@user = User.find(params[:id])
 		@cart = @user.cart
@@ -18,10 +18,10 @@ class CartsController < ApplicationController
 	end
 
 	def require_cart
-    unless user_cart?
-      flash[:error] = "You tried the wrong cart"
-      redirect_to root_path 
-    end
-  end
+		unless user_cart?
+			flash[:error] = "You tried the wrong cart"
+			redirect_to root_path 
+		end
+	end
 
 end
