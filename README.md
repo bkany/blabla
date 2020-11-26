@@ -1,5 +1,4 @@
 # README
-
 This app has been created to support a __website selling cats pictures__. 
 
 ## User paths : 

@@ -1,0 +1,33 @@
+<div class="container m-5 mx-auto">
+  <h2>Mes commandes</h2>
+  <div class="row">
+    <div class="col card-header d-flex align-items-center justify-content-center">
+      <h4> N commande </h4>
+    </div>
+    <div class="col card-header d-flex align-items-center justify-content-center">
+      <h4> Date </h4>
+    </div>
+    <div class="col card-header d-flex align-items-center justify-content-center">
+      <h4> Total </h4>
+    </div>
+    <div class="col card-header d-flex align-items-center justify-content-center">
+      <h4> Details </h4>
+    </div>
+  </div>
+  <% @orders.each do |order| %>
+    <div class="row border-bottom">
+      <div class="col border-bottom border-left d-flex align-items-center justify-content-center">
+        <p> <%= order.id %> </p>
+      </div>
+      <div class="col border-bottom d-flex align-items-center justify-content-center">
+        <p> <%= order.created_at.strftime('%m/%d/%Y -  %H:%M:%S') %></p>
+      </div>
+      <div class="col border-bottom border-left border-right d-flex align-items-center justify-content-center">
+        <p> <%= order.total_price %> €</p>
+      </div>
+      <div class="col border-bottom border-left border-right d-flex align-items-center justify-content-center">
+        <%= link_to 'Details commande', order_path(order) %>
+      </div>
+    </div>
+  <% end %>
+</div>
