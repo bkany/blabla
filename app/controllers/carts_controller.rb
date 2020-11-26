@@ -5,16 +5,6 @@ class CartsController < ApplicationController
 		@user = User.find(params[:id])
 		@cart = @user.cart
 		@cart_items = @cart.items
-		@total = total
-	end
-
-	def total
-	total = 0
-		@cart_items.each do |t|
-			total += t.price
-
-		end
-		return total
 	end
 
 	def user_cart?

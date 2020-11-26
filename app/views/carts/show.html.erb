@@ -2,10 +2,10 @@
 <div class="jumbotron">
 	<h1 class="display-3 ml-3">Votre panier</h1>
 	<p class="lead"> Voici les produits de votre panier, vous pouvez le valider ou en ajouter d'autres.</p>
-	<p> Total de votre panier : <%= @total %> €</p> 
+	<p> Total de votre panier : <%= @cart.total %> €</p>
 	<hr class="my-4">
 	<p class="lead">
-		<a class="btn btn-success btn-lg" href="#" role="button">Valider mon panier</a>
+    <%= button_to 'Valider mon panier', orders_path, method: :post, class:"btn btn-success btn-lg" %>
 	</p>
 </div>
 </div>
