@@ -7,10 +7,8 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   resources :carts, only: [:show]
-  resources :items do 
+  resources :items do
   	resources :cart_items, only: [:create, :update, :destroy]
   end
-  resources :users
 
-  
 end
