@@ -15,6 +15,7 @@
  *=require bootstrap
  *=require pages/devise-session-new
  *=require components/avatar
+ *=require components/footer
  *=require_tree .
  *=require_self
  *
