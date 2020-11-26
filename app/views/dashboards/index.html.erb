@@ -12,6 +12,9 @@
       <h4> N commande </h4>
     </div>
     <div class="col card-header d-flex align-items-center justify-content-center">
+        <h4> User </h4>
+    </div>
+    <div class="col card-header d-flex align-items-center justify-content-center">
       <h4> Date </h4>
     </div>
     <div class="col card-header d-flex align-items-center justify-content-center">
@@ -26,6 +29,11 @@
       <div class="col border-bottom border-left d-flex align-items-center justify-content-center">
         <p> <%= order.id %> </p>
       </div>
+      <% if order.user %>
+        <div class="col border-bottom border-left d-flex align-items-center justify-content-center">
+            <p> <%= order.user.email %> </p>
+        </div>
+      <%end%>
       <div class="col border-bottom d-flex align-items-center justify-content-center">
         <p> <%= order.created_at.strftime('%m/%d/%Y -  %H:%M:%S') %></p>
       </div>

@@ -19,6 +19,7 @@ User.destroy_all
 
 p "Destroying Cart... #{Cart.count} "
 Cart.destroy_all
+
 p "-----------------------"
 p "-----------------------"
 
