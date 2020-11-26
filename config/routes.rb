@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
   devise_for :users, controllers: {
       registrations: 'users/registrations'
   }
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
   	resources :cart_items, only: [:create, :update, :destroy]
   end
   resources :orders, only: [:show, :index, :create]
+  resources :dashboards, only: [:index]
 end
