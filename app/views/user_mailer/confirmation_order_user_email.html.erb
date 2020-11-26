@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/10557b428c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>user profile</title>
+    <style>
+        table{
+            width: 75%;
+        }
+        table *{
+            display: inline-flex;
+            align-items: center;
+            padding: .25em;
+        }
+        table thead, table tbody, tr{
+            display: block;
+            width: 100%;
+        }
+        table .title{
+            width: 25%;
+        }
+        table .desc{
+            width: 60%;
+        }
+        table .price{
+            width: 14%;
+        }
+        tbody tr{
+            border-bottom: solid 1px rgba(0, 0, 0, .15);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="w-75 mx-auto">
+        <div class="alert-success jumbotron">
+            <div class="h1">
+                Merci pour votre commande
+            </div>
+            Merci d'avoir commandé sur KittenShop
+        </div>
+        <div class="w-100 d-flex justify-content-center flex-column">
+            <div class="h4">
+                Bonjour <%= @user.first_name%> <%= @user.last_name%>,
+            </div>
+            <div class="h3 ">Récapitulatif de commande :</div>
+
+            <table class="d-block mx-auto my-3">
+                <thead>
+                  <tr>
+                    <th class=" title">
+                        <div class="h5">
+                            Titre
+                        </div>
+                    </th>
+                    <th class="desc">
+                        <div class="h5">
+                            Description
+                        </div>
+                    </th>
+                    <th>
+                        <div class="h5">
+                            prix
+                        </div>
+                    </th>
+                  </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                     <td class="title">Lorem, ipsum dolor.</td>
+                     <td class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nulla laborum inventore reiciendis molestiae, repellat velit vitae accusamus necessitatibus aliquid nostrum, cupiditate debitis eaque dolorum? Voluptas iure minima blanditiis officia?</td>
+                     <td class="price">5000$</td>
+                   </tr>
+                </tbody>
+              </table>
+            <div class="w-100 d-flex flex-wrap align-items-center justify-content-center">
+                <div class="col-4 mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                Lorem, ipsum dolor.
+                            </h4>
+                        </div>
+                        <div class="card-body" style="background-image: url('ressources/kitty.jpg'); height: 25vh; background-size: cover; background-position: center center;">
+                        </div>
+                        <div class="card-footer">6$</div>
+                    </div>
+                </div>
+                <div class="h3">
+                    L'équipe de <a href="#">KittenShop</a> espere vous revoir bientot
+                </div>
+            </div>
+        </div>
+        <div class="btn-secondary disabled jumbotron d-flex justify-content-center mb-0">
+            KittenShop 2020 all rights reserved
+        </div>
+    </div>
+</body>
+</html>
+
