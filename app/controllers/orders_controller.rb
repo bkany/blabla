@@ -12,11 +12,9 @@ class OrdersController < ApplicationController
         @cart_items.each do |item|
           @order_item = OrderItem.create(order_id: @order.id, item_id: item.item_id, quantity: 1)
           @order_item.save
-          puts '###########################BEFORE####################################'
-          puts @order_item.errors.messages
           item.destroy
         end
-        flash.notice = "Votre commande a bien ete effectuer"
+        flash.notice = "Votre commande a bien été effectuée"
         redirect_to root_path
       else
         flash.alert = "Une erreur est survenue #{@order.errors.messages}"
