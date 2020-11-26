@@ -76,6 +76,19 @@ puts 'test User'
     c.save
 end
 
+puts 'admin'
+
+u = User.new
+u.first_name = 'admin'
+u.last_name = 'admin'
+u.email = "adminthpcat@yopmail.com"
+u.password = "123456"
+u.is_admin = true
+u.save
+c = Cart.new
+c.user_id = u.id
+c.save
+
 
 p "Creation cart... #{Cart.count}"
 p "Creation Users... #{User.count}"
