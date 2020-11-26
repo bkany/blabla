@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
 
   root to: 'pages#index'
-
+  
   resources :mon_panier, :controller => "carts", only: [:show], :as => "carts"
 
   resources :produit, :controller => "items", :as => "items" do
@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   end
 
   resources :users
-
 end
