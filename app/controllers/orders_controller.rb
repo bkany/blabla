@@ -1,4 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :require_order, only: :show
+
+  def index
+    @orders = current_user.orders
+  end
+
+  def show
+    @order = Order.find(params[:id])
+  end
 
   def create
     @cart = current_user.cart
@@ -21,6 +30,24 @@ class OrdersController < ApplicationController
         redirect_to cart_path(id: current_user.id)
       end
     end
-
   end
+
+  def user_order?
+
+    @order = Order.find(params[:id])
+
+    if current_user == @order.user
+      return true
+    else
+      return false
+    end
+  end
+
+  def require_order
+    unless user_order?
+      flash[:error] = "You tried the wrong order"
+      redirect_to root_path
+    end
+  end
+
 end
