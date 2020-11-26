@@ -10,27 +10,23 @@ class OrdersController < ApplicationController
   end
 
   def create
-    puts " 1111111111111111111111111111111111 "
     @total = current_user.cart.total_stripe.to_i
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
       source: params[:stripeToken],
     })
-    puts " 222222222222222222222222222222222222 "
     charge = Stripe::Charge.create({
       customer: customer.id,
       amount: @total,
       description: "Payment of #{current_user.first_name} #{current_user.last_name}",
       currency: 'eur',
     })
-    puts " 3333333333333333333333333333333333333 "
     
     @cart = current_user.cart
     if !@cart.items.first
       flash.alert = "Votre panier est vide"
       redirect_to cart_path(id: current_user.id)
     else
-      puts " 55555555555555555555555555555555555555555555555 "
       @order = Order.new(user_id: current_user.id, status: '1', total_price: @cart.total)
       if @order.save
         @cart_items = @cart.cart_items
