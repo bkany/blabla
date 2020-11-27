@@ -15,7 +15,7 @@ This app has been created to support a __website selling cats pictures__.
 - ActionMailer
 
 ## Website link :
-https://kittenshop-develop-mjqwijdxang.herokuapp.com
+https://kitten-stagging.herokuapp.com/
 
 ## Team : 
 - Nabil Labrazi - https://github.com/nlabrazi
